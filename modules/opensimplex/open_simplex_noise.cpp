@@ -100,8 +100,8 @@ Ref<Image> OpenSimplexNoise::get_image(int p_width, int p_height) {
 
 	PoolVector<uint8_t>::Write wd8 = data.write();
 
-	for (int i = 0; i < p_height; i++) {
-		for (int j = 0; j < p_width; j++) {
+	for (int j = 0; j < p_height; j++) {
+		for (int i = 0; i < p_width; i++) {
 			float v = get_noise_2d(i, j);
 			v = v * 0.5 + 0.5; // Normalize [0..1]
 			uint8_t value = uint8_t(CLAMP(v * 255.0, 0, 255));
